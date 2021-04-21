@@ -1,11 +1,15 @@
 #!/bin/sh
-sudo apt update
-sudo apt install fio
-sudo apt install sysbench
+sudo apt update -y
+sudo apt install fio -y
+sudo apt install sysbench -y
 # IO
+echo "#########################################################  IO #####################################"
 fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=random_read_write.fio --bs=4k --iodepth=64 --size=250M --readwrite=randrw --rwmixread=80
 
+echo "#########################################################  RAM write #####################################"
 # RAM writes
 sysbench --test=memory --memory-block-size=1M --memory-total-size=10G run
+
+echo "#########################################################  RAM read #####################################"
 #RAM reads
 sysbench --test=memory --memory-block-size=1M --memory-total-size=10G --memory-oper=read run 
