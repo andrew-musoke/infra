@@ -1,5 +1,5 @@
-cube(`CampaignHistoryV1`, {
-  sql: `SELECT * FROM test."campaignHistoryV1"`,
+cube(`SmsbalanceReal`, {
+  sql: `SELECT * FROM test.smsbalance_real`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -13,7 +13,12 @@ cube(`CampaignHistoryV1`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, campaignname, timestamp]
+      drillMembers: [customerid]
+    },
+    
+    totalbalance: {
+      sql: `${CUBE}."TOTALBALANCE"`,
+      type: `sum`
     }
   },
   
@@ -22,23 +27,11 @@ cube(`CampaignHistoryV1`, {
       sql: `${CUBE}."CUSTOMERID"`,
       type: `string`
     },
-    
-    campaignname: {
-      sql: `${CUBE}."CAMPAIGNNAME"`,
+
+    balance: {
+      sql: `${CUBE}."TOTALBALANCE"`,
       type: `string`
     },
-
-    numberofrecipients: {
-      sql: `${CUBE}."NUMBEROFRECIPIENTS"`,
-      type: `number`
-    },
-
-    
-    
-    timestamp: {
-      sql: `${CUBE}."TIMESTAMP"`,
-      type: `string`
-    }
   },
   
   dataSource: `default`

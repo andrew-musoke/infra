@@ -1,5 +1,5 @@
-cube(`SmsbalanceQueueMv`, {
-  sql: `SELECT * FROM test.smsbalance_queue_mv`,
+cube(`Loginsinfra`, {
+  sql: `SELECT * FROM test.loginsinfra`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -13,23 +13,23 @@ cube(`SmsbalanceQueueMv`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, transactionid]
+      drillMembers: []
     },
     
-    totalbalance: {
-      sql: `${CUBE}."TOTALBALANCE"`,
+    logincount: {
+      sql: `${CUBE}."LOGINCOUNT"`,
       type: `sum`
     }
   },
   
   dimensions: {
-    customerid: {
-      sql: `${CUBE}."CUSTOMERID"`,
+    users: {
+      sql: `${CUBE}."USERS"`,
       type: `string`
     },
     
-    transactionid: {
-      sql: `${CUBE}."TRANSACTIONID"`,
+    event: {
+      sql: `${CUBE}."EVENT"`,
       type: `string`
     }
   },

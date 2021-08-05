@@ -36,23 +36,7 @@ cube(`CampaignDetails`, {
     telco: {
       sql: `${CUBE}."TELCO"`,
       type: `string`
-    },
-
-    airtelrecipients: {
-      sql: `${CUBE}."AIRTELRECIPIENTSSUCCESS"`,
-      type: `number`
-    },
-
-    mtnrecipients: {
-      sql: `${CUBE}."MTNRECIPIENTSSUCCESS"`,
-      type: `number`
-    },
-
-    totalrecipients: {
-      sql: `${CUBE}."TOTALRECIPIENTS"`,
-      type: `number`
     }
-
   },
   
   dataSource: `default`

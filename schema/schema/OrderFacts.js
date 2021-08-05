@@ -1,0 +1,4 @@
+cube(`OrderFacts`, {
+    extends: Orders,
+  });
+  

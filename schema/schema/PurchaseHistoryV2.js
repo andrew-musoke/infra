@@ -27,16 +27,6 @@ cube(`PurchaseHistoryV2`, {
       sql: `${CUBE}."STATUS"`,
       type: `string`
     },
-
-    amountpaid: {
-      sql: `${CUBE}."AMOUNTPAID"`,
-      type: `number`
-    },
-
-    smsbought: {
-      sql: `${CUBE}."SMSBOUGHT"`,
-      type: `number`
-    },
     
     phonenumber: {
       sql: `${CUBE}."PHONENUMBER"`,
