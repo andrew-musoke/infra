@@ -1,5 +1,5 @@
-cube(`PurchaseHistoryQueue`, {
-  sql: `SELECT * FROM test."purchaseHistory_queue"`,
+cube(`Purchasehistoryreal`, {
+  sql: `SELECT * FROM test.purchasehistoryreal`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -13,12 +13,7 @@ cube(`PurchaseHistoryQueue`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, paidthrough, datetime]
-    },
-    
-    amount: {
-      sql: `${CUBE}."AMOUNT"`,
-      type: `sum`
+      drillMembers: [customerid]
     }
   },
   
@@ -28,23 +23,23 @@ cube(`PurchaseHistoryQueue`, {
       type: `string`
     },
     
-    status: {
-      sql: `${CUBE}."STATUS"`,
+    paymentStatus: {
+      sql: `${CUBE}."PAYMENT_STATUS"`,
+      type: `string`
+    },
+
+    amountPaid: {
+      sql: `${CUBE}."AMOUNT_PAID"`,
+      type: `number`
+    },
+    
+    phoneNumber: {
+      sql: `${CUBE}."PHONE_NUMBER"`,
       type: `string`
     },
     
-    phone: {
-      sql: `${CUBE}."PHONE"`,
-      type: `string`
-    },
-    
-    paidthrough: {
-      sql: `${CUBE}."PAIDTHROUGH"`,
-      type: `string`
-    },
-    
-    datetime: {
-      sql: `${CUBE}."DATETIME"`,
+    time: {
+      sql: `${CUBE}."TIME"`,
       type: `string`
     }
   },

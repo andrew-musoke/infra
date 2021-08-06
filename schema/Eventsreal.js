@@ -1,5 +1,5 @@
-cube(`EventsQueueMv`, {
-  sql: `SELECT * FROM test.events_queue_mv`,
+cube(`Eventsreal`, {
+  sql: `SELECT * FROM test.eventsreal`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -38,8 +38,8 @@ cube(`EventsQueueMv`, {
       type: `string`
     },
     
-    redirectUri: {
-      sql: `${CUBE}."REDIRECT_URI"`,
+    redirectUrl: {
+      sql: `${CUBE}."REDIRECT_URL"`,
       type: `string`
     },
     

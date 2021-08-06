@@ -1,5 +1,5 @@
-cube(`PurchaseHistoryV2`, {
-  sql: `SELECT * FROM test."purchaseHistoryV2"`,
+cube(`EventsrealQueueMv`, {
+  sql: `SELECT * FROM test.eventsreal_queue_mv`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -13,33 +13,38 @@ cube(`PurchaseHistoryV2`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, paidthrough, timestamp]
+      drillMembers: [userid, username]
     }
   },
   
   dimensions: {
-    customerid: {
-      sql: `${CUBE}."CUSTOMERID"`,
+    userid: {
+      sql: `${CUBE}."USERID"`,
       type: `string`
     },
     
-    status: {
-      sql: `${CUBE}."STATUS"`,
+    username: {
+      sql: `${CUBE}."USERNAME"`,
       type: `string`
     },
     
-    phonenumber: {
-      sql: `${CUBE}."PHONENUMBER"`,
+    eventtype: {
+      sql: `${CUBE}."EVENTTYPE"`,
       type: `string`
     },
     
-    paidthrough: {
-      sql: `${CUBE}."PAIDTHROUGH"`,
+    ipaddress: {
+      sql: `${CUBE}."IPADDRESS"`,
       type: `string`
     },
     
-    timestamp: {
-      sql: `${CUBE}."TIMESTAMP"`,
+    redirectUrl: {
+      sql: `${CUBE}."REDIRECT_URL"`,
+      type: `string`
+    },
+    
+    time: {
+      sql: `${CUBE}."TIME"`,
       type: `string`
     }
   },

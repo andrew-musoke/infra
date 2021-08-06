@@ -1,5 +1,5 @@
-cube(`CampaignHistoryV1Queue`, {
-  sql: `SELECT * FROM test."campaignHistoryV1_queue"`,
+cube(`Campaignhistoryreal`, {
+  sql: `SELECT * FROM test.campaignhistoryreal`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -13,7 +13,7 @@ cube(`CampaignHistoryV1Queue`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, campaignname, timestamp]
+      drillMembers: [customerid, campaignname]
     }
   },
   
@@ -27,9 +27,14 @@ cube(`CampaignHistoryV1Queue`, {
       sql: `${CUBE}."CAMPAIGNNAME"`,
       type: `string`
     },
+
+    numberofrecipients: {
+      sql: `${CUBE}."NUMBEROFRECIPIENTS"`,
+      type: `number`
+    },
     
-    timestamp: {
-      sql: `${CUBE}."TIMESTAMP"`,
+    time: {
+      sql: `${CUBE}."TIME"`,
       type: `string`
     }
   },

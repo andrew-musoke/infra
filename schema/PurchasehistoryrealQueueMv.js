@@ -1,5 +1,5 @@
-cube(`CampaignHistoryV1QueueMv`, {
-  sql: `SELECT * FROM test."campaignHistoryV1_queue_mv"`,
+cube(`PurchasehistoryrealQueueMv`, {
+  sql: `SELECT * FROM test.purchasehistoryreal_queue_mv`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -13,7 +13,7 @@ cube(`CampaignHistoryV1QueueMv`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, campaignname, timestamp]
+      drillMembers: [customerid]
     }
   },
   
@@ -23,13 +23,18 @@ cube(`CampaignHistoryV1QueueMv`, {
       type: `string`
     },
     
-    campaignname: {
-      sql: `${CUBE}."CAMPAIGNNAME"`,
+    paymentStatus: {
+      sql: `${CUBE}."PAYMENT_STATUS"`,
       type: `string`
     },
     
-    timestamp: {
-      sql: `${CUBE}."TIMESTAMP"`,
+    phoneNumber: {
+      sql: `${CUBE}."PHONE_NUMBER"`,
+      type: `string`
+    },
+    
+    time: {
+      sql: `${CUBE}."TIME"`,
       type: `string`
     }
   },

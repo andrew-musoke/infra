@@ -1,3 +1,0 @@
-cube(`EventsMain`, {
-    extends: Events,
-  });
