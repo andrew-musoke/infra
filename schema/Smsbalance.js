@@ -1,3 +1,3 @@
 cube(`Smsbalance`, {
-    extends: SmsbalanceReal,
+    extends: Smsbalance2Real,
   });

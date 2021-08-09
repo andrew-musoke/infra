@@ -1,5 +1,5 @@
-cube(`SmsbalanceRealQueue`, {
-  sql: `SELECT * FROM test.smsbalance_real_queue`,
+cube(`Smsbalance2RealQueue`, {
+  sql: `SELECT * FROM test.smsbalance2_real_queue`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -14,11 +14,6 @@ cube(`SmsbalanceRealQueue`, {
     count: {
       type: `count`,
       drillMembers: [customerid]
-    },
-    
-    totalbalance: {
-      sql: `${CUBE}."TOTALBALANCE"`,
-      type: `sum`
     }
   },
   
