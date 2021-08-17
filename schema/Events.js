@@ -1,3 +1,3 @@
 cube(`Events`, {
-    extends: BasesmsauthcolumnsReal,
+    extends: Basesmsauthcolumns1Real,
   });

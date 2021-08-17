@@ -3,7 +3,7 @@ cube(`Smsbalance3Real`, {
   
   preAggregations: {
     // Pre-Aggregations definitions go here
-    // Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started  
+    // Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started 
   },
   
   joins: {

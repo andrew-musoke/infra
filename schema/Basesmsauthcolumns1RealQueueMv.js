@@ -1,10 +1,9 @@
-cube(`BasesmsauthcolumnsReal`, {
-  sql: `SELECT * FROM test.basesmsauthcolumns_real`,
+cube(`Basesmsauthcolumns1RealQueueMv`, {
+  sql: `SELECT * FROM test.basesmsauthcolumns1_real_queue_mv`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
     // Learn more here: https://cube.dev/docs/caching/pre-aggregations/getting-started  
-    
   },
   
   joins: {
@@ -40,14 +39,14 @@ cube(`BasesmsauthcolumnsReal`, {
     },
     
     redirectUrl: {
-     sql: `${CUBE}."REDIRECT_URL"`,
+      sql: `${CUBE}."REDIRECT_URL"`,
       type: `string`
     },
-
+    
     time: {
       sql: `${CUBE}."TIME"`,
-       type: `number`
-     }
+      type: `string`
+    }
   },
   
   dataSource: `default`
