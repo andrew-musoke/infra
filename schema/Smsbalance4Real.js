@@ -1,5 +1,5 @@
-cube(`Purchasehistoryreal`, {
-  sql: `SELECT * FROM test.purchasehistoryreal`,
+cube(`Smsbalance4Real`, {
+  sql: `SELECT * FROM test.smsbalance4_real`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -20,27 +20,17 @@ cube(`Purchasehistoryreal`, {
   dimensions: {
     customerid: {
       sql: `${CUBE}."CUSTOMERID"`,
-      type: `string`,
-    },
-    
-    paymentStatus: {
-      sql: `${CUBE}."PAYMENT_STATUS"`,
       type: `string`
     },
 
-    amountPaid: {
-      sql: `${CUBE}."AMOUNT_PAID"`,
+    balance: {
+      sql: `${CUBE}."SMSBALANCECURRENT"`,
       type: `number`
     },
-    
-    phoneNumber: {
-      sql: `${CUBE}."PHONE_NUMBER"`,
-      type: `string`
-    },
-    
-    time: {
-      sql: `${CUBE}."TIME"`,
-      type: `string`
+
+    countcustomerids: {
+      sql: `${CUBE}."COUNTCUSTOMERID"`,
+      type: `number`
     }
   },
   
