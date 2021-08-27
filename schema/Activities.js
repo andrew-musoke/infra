@@ -1,0 +1,3 @@
+cube(`Activities`, {
+    extends: Basesmsactivitiesreal,
+  });
