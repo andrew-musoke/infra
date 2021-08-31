@@ -1,5 +1,9 @@
-cube(`Basesmsauthcolumns1RealQueueMv`, {
-  sql: `SELECT * FROM test.basesmsauthcolumns1_real_queue_mv`,
+cube(`Basesmsauthreal`, {
+  sql: `SELECT * FROM smsdomain.basesmsauthreal`,
+
+  refreshKey: {
+    every: `1 second`,
+  },
   
   preAggregations: {
     // Pre-Aggregations definitions go here

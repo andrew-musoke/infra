@@ -1,5 +1,9 @@
 cube(`Campaignhistoryreal`, {
-  sql: `SELECT * FROM test.campaignhistoryreal`,
+  sql: `SELECT * FROM smsdomain.campaignhistoryreal`,
+
+  refreshKey: {
+    every: `1 second`,
+  },
   
   preAggregations: {
     // Pre-Aggregations definitions go here

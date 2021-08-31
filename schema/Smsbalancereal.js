@@ -1,5 +1,9 @@
-cube(`CampaignhistoryrealQueueMv`, {
-  sql: `SELECT * FROM test.campaignhistoryreal_queue_mv`,
+cube(`Smsbalancereal`, {
+  sql: `SELECT * FROM smsdomain.smsbalancereal`,
+
+  refreshKey: {
+    every: `1 second`,
+  },
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -13,7 +17,12 @@ cube(`CampaignhistoryrealQueueMv`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, campaignname]
+      drillMembers: [customerid]
+    },
+    
+    smsBalance: {
+      sql: `${CUBE}."SMS_BALANCE"`,
+      type: `sum`
     }
   },
   
@@ -22,15 +31,15 @@ cube(`CampaignhistoryrealQueueMv`, {
       sql: `${CUBE}."CUSTOMERID"`,
       type: `string`
     },
-    
-    campaignname: {
-      sql: `${CUBE}."CAMPAIGNNAME"`,
-      type: `string`
+
+    balance: {
+      sql: `${CUBE}."SMS_BALANCE"`,
+      type: `number`
     },
-    
-    time: {
-      sql: `${CUBE}."TIME"`,
-      type: `string`
+
+    countcustomerids: {
+      sql: `${CUBE}."COUNTCUSTOMERID"`,
+      type: `number`
     }
   },
   

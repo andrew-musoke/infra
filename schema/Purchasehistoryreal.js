@@ -1,5 +1,9 @@
 cube(`Purchasehistoryreal`, {
-  sql: `SELECT * FROM test.purchasehistoryreal`,
+  sql: `SELECT * FROM smsdomain.purchasehistoryreal`,
+
+  refreshKey: {
+    every: `1 second`,
+  },
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -20,7 +24,7 @@ cube(`Purchasehistoryreal`, {
   dimensions: {
     customerid: {
       sql: `${CUBE}."CUSTOMERID"`,
-      type: `string`,
+      type: `string`
     },
     
     paymentStatus: {
@@ -33,6 +37,11 @@ cube(`Purchasehistoryreal`, {
       type: `number`
     },
     
+    smsBought: {
+      sql: `${CUBE}."SMS_BOUGHT"`,
+      type: `number`
+    },
+
     phoneNumber: {
       sql: `${CUBE}."PHONE_NUMBER"`,
       type: `string`

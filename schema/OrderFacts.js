@@ -1,4 +1,0 @@
-cube(`OrderFacts`, {
-    extends: Orders,
-  });
-  
