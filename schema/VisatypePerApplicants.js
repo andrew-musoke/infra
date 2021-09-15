@@ -1,0 +1,3 @@
+cube(`VisatypePerApplicants`, {
+    extends: DubaivisatypeperapplicationDev,
+  });

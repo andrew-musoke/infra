@@ -1,0 +1,3 @@
+cube(`ApplicationsPerBranches`, {
+    extends: DubaivisaapplicationsperbranchesDev,
+  });

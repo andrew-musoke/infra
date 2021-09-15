@@ -1,0 +1,3 @@
+cube(`TotalRevenue`, {
+    extends: DubaivisatotalrevenueDev,
+  });

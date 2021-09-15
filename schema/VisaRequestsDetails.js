@@ -1,0 +1,3 @@
+cube(`VisaRequestsDetails`, {
+    extends: DubaivisarequestsdetailsDev,
+  });

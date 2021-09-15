@@ -1,0 +1,3 @@
+cube(`RevenuePerBranches`, {
+    extends: DubaivisarevenueperbranchesDev,
+  });

@@ -1,0 +1,3 @@
+cube(`TotalRequests`, {
+    extends: DubaivisatotalrequestsDev,
+  });

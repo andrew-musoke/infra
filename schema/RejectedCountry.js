@@ -1,0 +1,3 @@
+cube(`RejectedCountry`, {
+    extends: DubaivisarejectedpercountryDev,
+  });
