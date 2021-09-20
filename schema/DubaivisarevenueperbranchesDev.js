@@ -1,5 +1,8 @@
 cube(`DubaivisarevenueperbranchesDev`, {
+
   sql: `SELECT * FROM dubaivisadomain_dev.dubaivisarevenueperbranches_dev`,
+
+  
   
   preAggregations: {
     // Pre-Aggregations definitions go here

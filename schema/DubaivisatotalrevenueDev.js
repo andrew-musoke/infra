@@ -1,5 +1,6 @@
 cube(`DubaivisatotalrevenueDev`, {
   sql: `SELECT * FROM dubaivisadomain_dev.dubaivisatotalrevenue_dev`,
+ 
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -24,10 +25,6 @@ cube(`DubaivisatotalrevenueDev`, {
       type: `number`
     },
 
-    transactionAmountUsd: {
-      sql: `${CUBE}."TRANSACTION_AMOUNT_USD"`,
-      type: `number`
-    },
 
     timestamp: {
       sql: `${CUBE}."TIMESTAMP"`,
