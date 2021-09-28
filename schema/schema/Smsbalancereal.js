@@ -1,9 +1,5 @@
 cube(`Smsbalancereal`, {
   sql: `SELECT * FROM smsdomain.smsbalancereal`,
-
-  refreshKey: {
-    every: `1 second`,
-  },
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -17,7 +13,7 @@ cube(`Smsbalancereal`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid]
+      drillMembers: [customerid, timestamp]
     },
     
     smsBalance: {
@@ -36,10 +32,10 @@ cube(`Smsbalancereal`, {
       sql: `${CUBE}."SMS_BALANCE"`,
       type: `number`
     },
-
-    countcustomerids: {
-      sql: `${CUBE}."COUNTCUSTOMERID"`,
-      type: `number`
+    
+    timestamp: {
+      sql: `${CUBE}."TIMESTAMP"`,
+      type: `time`
     }
   },
   

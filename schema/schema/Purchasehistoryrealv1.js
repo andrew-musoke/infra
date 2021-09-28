@@ -1,9 +1,5 @@
-cube(`Basesmsauthreal`, {
-  sql: `SELECT * FROM smsdomain.basesmsauthreal`,
-
-  refreshKey: {
-    every: `1 second`,
-  },
+cube(`Purchasehistoryrealv1`, {
+  sql: `SELECT * FROM smsdomain.purchasehistoryrealv1`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -17,33 +13,33 @@ cube(`Basesmsauthreal`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [userid, username]
+      drillMembers: [customerid]
     }
   },
   
   dimensions: {
-    userid: {
-      sql: `${CUBE}."USERID"`,
+    customerid: {
+      sql: `${CUBE}."CUSTOMERID"`,
       type: `string`
     },
     
-    username: {
-      sql: `${CUBE}."USERNAME"`,
+    paymentStatus: {
+      sql: `${CUBE}."PAYMENT_STATUS"`,
       type: `string`
     },
-    
-    eventtype: {
-      sql: `${CUBE}."EVENTTYPE"`,
-      type: `string`
+
+    amountPaid: {
+      sql: `${CUBE}."AMOUNT_PAID"`,
+      type: `number`
+    },
+
+    smsBought: {
+      sql: `${CUBE}."SMS_BOUGHT"`,
+      type: `number`
     },
     
-    ipaddress: {
-      sql: `${CUBE}."IPADDRESS"`,
-      type: `string`
-    },
-    
-    redirectUrl: {
-      sql: `${CUBE}."REDIRECT_URL"`,
+    phoneNumber: {
+      sql: `${CUBE}."PHONE_NUMBER"`,
       type: `string`
     },
     

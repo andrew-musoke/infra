@@ -1,9 +1,5 @@
-cube(`Campaignhistoryreal`, {
-  sql: `SELECT * FROM smsdomain.campaignhistoryreal`,
-
-  refreshKey: {
-    every: `1 second`,
-  },
+cube(`Purchasehistoryreal`, {
+  sql: `SELECT * FROM smsdomain.purchasehistoryreal`,
   
   preAggregations: {
     // Pre-Aggregations definitions go here
@@ -17,7 +13,7 @@ cube(`Campaignhistoryreal`, {
   measures: {
     count: {
       type: `count`,
-      drillMembers: [customerid, campaignname]
+      drillMembers: [customerid, timestamp]
     }
   },
   
@@ -27,19 +23,29 @@ cube(`Campaignhistoryreal`, {
       type: `string`
     },
     
-    campaignname: {
-      sql: `${CUBE}."CAMPAIGNNAME"`,
+    paymentStatus: {
+      sql: `${CUBE}."PAYMENT_STATUS"`,
       type: `string`
     },
 
-    numberofrecipients: {
-      sql: `${CUBE}."NUMBEROFRECIPIENTS"`,
+    amountPaid: {
+      sql: `${CUBE}."AMOUNT_PAID"`,
+      type: `number`
+    },
+
+    smsBought: {
+      sql: `${CUBE}."SMS_BOUGHT"`,
       type: `number`
     },
     
-    time: {
-      sql: `${CUBE}."TIME"`,
+    phoneNumber: {
+      sql: `${CUBE}."PHONE_NUMBER"`,
       type: `string`
+    },
+    
+    timestamp: {
+      sql: `${CUBE}."TIMESTAMP"`,
+      type: `time`
     }
   },
   
