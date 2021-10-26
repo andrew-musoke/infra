@@ -1,3 +1,3 @@
 cube(`PurchaseHistory`, {
-    extends: Purchasehistoryrealv1,
+    extends: Purchasehistoryreal,
   });

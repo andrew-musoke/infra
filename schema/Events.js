@@ -1,3 +1,3 @@
 cube(`Events`, {
-    extends: Basesmsauthrealv1,
+    extends: Basesmsauthreal,
   });
