@@ -1,0 +1,3 @@
+cube(`CampaignReport`, {
+    extends: Campaignreportreal,
+  });
